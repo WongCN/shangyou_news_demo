@@ -1,0 +1,2 @@
+# shangyou_news_demo
+使用golang写的第一个demo
