@@ -36,7 +36,6 @@ func (news News) GetAllNews(ctx *gin.Context) {
 			if comment[i].ID == son[j].CommentId {
 				// 回复者的id作为key
 				m2[int(son[j].FromUserId)] = son[j]
-				continue
 			}
 		}
 		comment[i].TestMap = m2
