@@ -11,13 +11,20 @@ import (
 	"time"
 )
 
-func getAllNews(ctx *gin.Context) {
-	news.GetAllNews(ctx)
+func getAllNewsById(ctx *gin.Context) {
+	news.GetAllNewsById(ctx)
 }
 
+func getNewsDetailById(ctx *gin.Context) {
+	news.GetNewsDetailById(ctx)
+}
 func main() {
 	r := gin.Default()
-	go r.POST("getAllNews", getAllNews)
+	// 通过id获取新闻全部信息 /getAllNewsById?id=1
+	go r.GET("getAllNewsById", getAllNewsById)
+
+	// 通过id获取新闻详情  /getNewsDetailById?id=1
+	go r.GET("getNewsDetailById", getNewsDetailById)
 
 	// gin官方实例代码
 	srv := &http.Server{

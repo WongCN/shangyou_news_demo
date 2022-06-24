@@ -7,6 +7,9 @@ import (
 
 var news = service.News{}
 
-func GetAllNews(ctx *gin.Context) {
-	news.GetAllNews(ctx)
+func GetAllNewsById(ctx *gin.Context) {
+	news.GetAllNewsById(ctx)
+}
+func GetNewsDetailById(ctx *gin.Context) {
+	news.GetNewsDetailById(ctx)
 }

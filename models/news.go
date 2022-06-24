@@ -27,6 +27,7 @@ type News struct {
 	Picture []Picture `json:"picture" gorm:"foreignkey:NewsId;references:ID"`
 	// 关联评论表
 	Comment []Comment `json:"comment" gorm:"foreignkey:NewsId;references:ID"`
+	Error   string    `json:"error" gorm:"-"`
 }
 
 func (News) TableName() string {

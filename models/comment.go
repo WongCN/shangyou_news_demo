@@ -9,7 +9,7 @@ type Comment struct {
 	// 评论者id
 	UserId uint `gorm:"column:user_id" json:"user_id"`
 	// 评论下面的回复
-	Reply   []*Reply            `json:"reply" gorm:"foreignkey:CommentId;references:NewsId"`
+	Reply   []*Reply            `json:"-" gorm:"foreignkey:CommentId;references:NewsId"`
 	TestMap map[int]interface{} `json:"TestMap" gorm:"-"`
 }
 
